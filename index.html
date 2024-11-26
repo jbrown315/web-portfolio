@@ -12,7 +12,7 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Hello, I'm <span>Josh Brown</span></h1>
-                <p>Software Engineer | Computer Science Student</p>
+                <p>Searching for Full-Time Roles in Tech | B.S. in Computer Science</p>
                 <p>Transforming complex problems into elegant solutions through technology.</p>
                 <a href="#projects" class="btn primary-btn">Explore My Work</a>
             </div>
@@ -20,6 +20,11 @@
                 <img src="JoshBrown.jpg" alt="Josh Brown">
             </div>
         </div>
+        <div class="scroll-indicator">
+            <svg width="40" height="15" viewBox="0 0 40 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L20 13L39 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>       
     </header>
     <nav class="navbar">
         <div class="container">
@@ -92,5 +97,10 @@
             <p>&copy; 2024 Josh Brown. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
