@@ -3,26 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Josh Brown - Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm [Your Name], a Computer Science student.</p>
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hello, I'm <span>Josh Brown</span></h1>
+                <p>Software Engineer | Computer Science Student</p>
+                <p>Transforming complex problems into elegant solutions through technology.</p>
+                <a href="#projects" class="btn primary-btn">Explore My Work</a>
+            </div>
+            <div class="hero-image">
+                <img src="JoshBrown.jpg" alt="Josh Brown">
+            </div>
+        </div>
     </header>
-    <main>
-        <section id="resume-highlights">
-            <h2>Resume Highlights</h2>
-            <ul>
-                <li>Currently studying Computer Science at [Your School]</li>
-                <li>Experience with [list key skills]</li>
-                <li>Projects: [Link to projects or placeholders]</li>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="about" class="section about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I’m a forward-thinking Computer Science student with expertise in software engineering, machine learning, and web development. I strive to build impactful, scalable, and innovative solutions.</p>
+            </div>
+        </section>
+        <section id="resume" class="section resume">
+            <div class="container">
+                <h2>Resume Highlights</h2>
+                <ul class="resume-list">
+                    <li>🎓 Computer Science student at Rose-Hulman Institute of Technology | 3.8 Major GPA | Graduating May 2025</li>
+                    <li>💻 Skilled in Python, Java, SQL, C, Web Development, and machine learning frameworks</li>
+                    <li>📂 Devleoping "Geospatial Image Viewer" for the Johns Hopkins University Applied Physics Laboratory</li>
+                    <li>🌟 Created tools for semantic search and deep learning applications</li>
+                </ul>
+                <div class="resume-buttons">
+                    <!-- View Resume Button -->
+                    <a href="Resume - Josh Brown.pdf" class="btn primary-btn" target="_blank">View Resume</a>
+                
+                    <!-- Download Resume Button -->
+                    <a href="https://drive.google.com/uc?export=download&id=1vAgaSTWL8JL99SKwVtaAxi1JFeC00jw0" class="btn secondary-btn">Download Resume</a>
+                </div>                
+                
+            </div>
+        </section>
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project">
+                        <h3>Semantic Search</h3>
+                        <p>A search engine powered by word embeddings for enhanced movie review retrieval.</p>
+                        <a href="#" class="btn secondary-btn">Learn More</a>
+                    </div>
+                    <div class="project">
+                        <h3>Geospatial Image Viewer</h3>
+                        <p>A web-based visualization app for geospatial data in PostGIS.</p>
+                        <a href="#" class="btn secondary-btn">Learn More</a>
+                    </div>
+                    <div class="project">
+                        <h3>House Price Prediction</h3>
+                        <p>Deep learning model integrated into a Flask app for image-based price prediction.</p>
+                        <a href="#" class="btn secondary-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>I’m available for collaborations, opportunities, and inquiries.</p>
+                <a href="mailto:Josh.Brown.3155@gmail.com" class="btn primary-btn">Get in Touch</a>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>Contact: [Your Email]</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Josh Brown. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
