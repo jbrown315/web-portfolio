@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Predictor</h1>
+        <p>Fill in the house details and select a house image to get a price prediction.</p>
+        <p id="disclaimer">Please note this is exlusively a frontend demo to avoid the costs associated with hosting the entire NeuralNet.
+            <br><br>For more about our model or to interact with the model itself, please see <a id="github" href="https://github.com/rhit-brownjs/csse416-project">the project github.</a>
+            <br>Shoutout to my teammates on this project: Jonathan David, Mark Worden, and Ethan Wright.
+        </p>
+
+
+        <!-- Form for input features -->
+        <form action="predict.html" method="POST">
+            <label for="feature1">Square Footage (SQFT):</label>
+            <input type="number" step=1 min=0 id="feature1" name="feature1" required>
+
+            <label for="feature2">City:</label>
+            <select id="feature2" name="feature2" required>
+                <option value="" disabled selected>Select a city</option>
+                    <option value="6">Alhambra, CA</option>
+                    <option value="38">Big Bear, CA</option>
+                    <option value="106">Eagle Rock, CA</option>
+                    <option value="155">Inglewood, CA</option>
+                    <option value="157">Irvine, CA</option>
+                    <option value="207">Los Angeles, CA</option>
+                    <option value="240">Newport Beach, CA</option>
+                    <option value="318">San Bernadino, CA</option>
+            </select>
+
+            <label for="feature3">Number of Beds:</label>
+            <input type="number" step=1 min=0 id="feature3" name="feature3" required>
+
+            <label for="feature4">Number of Baths:</label>
+            <input type="number" step=1 min=0 id="feature4" name="feature4" required>
+
+            <!-- Hidden input to store selected image filename -->
+            <input type="hidden" name="house_image" id="selected-image-input" value="{{ images[0] }}">
+
+            <!-- Image selection area below form inputs -->
+            <div class="image-selection-container">
+                <div class="selected-image-wrapper">
+                    <img id="selected-image" src="images/4.jpg" alt="Selected House" class="selected-image">
+                </div>
+
+                <!-- Thumbnail images for selection -->
+                <div class="thumbnail-selection">
+                        <div class="thumbnail-wrapper">
+                            <img src="images/4.jpg" 
+                                 alt="House Thumbnail 1" 
+                                 class="thumbnail-image selected" 
+                                 onclick="selectImage('4.jpg')">
+                            <div class="checkmark-overlay active">&#10003;</div>
+                        </div>
+                        <div class="thumbnail-wrapper">
+                            <img src="images/38.jpg" 
+                                 alt="House Thumbnail 2" 
+                                 class="thumbnail-image" 
+                                 onclick="selectImage('38.jpg')">
+                            <div class="checkmark-overlay">&#10003;</div>
+                        </div>
+                        <div class="thumbnail-wrapper">
+                            <img src="images/44.jpg" 
+                                 alt="House Thumbnail 3" 
+                                 class="thumbnail-image" 
+                                 onclick="selectImage('44.jpg')">
+                            <div class="checkmark-overlay">&#10003;</div>
+                        </div>
+                        <div class="thumbnail-wrapper">
+                            <img src="images/48.jpg" 
+                                 alt="House Thumbnail 4" 
+                                 class="thumbnail-image" 
+                                 onclick="selectImage('48.jpg')">
+                            <div class="checkmark-overlay">&#10003;</div>
+                        </div>
+                        <div class="thumbnail-wrapper">
+                            <img src="images/89.jpg" 
+                                 alt="House Thumbnail 5" 
+                                 class="thumbnail-image" 
+                                 onclick="selectImage('89.jpg')">
+                            <div class="checkmark-overlay">&#10003;</div>
+                        </div>
+                        <div class="thumbnail-wrapper">
+                            <img src="images/227.jpg" 
+                                 alt="House Thumbnail 6" 
+                                 class="thumbnail-image" 
+                                 onclick="selectImage('227.jpg')">
+                            <div class="checkmark-overlay">&#10003;</div>
+                        </div>
+                        <div class="thumbnail-wrapper">
+                            <img src="images/621.jpg" 
+                                 alt="House Thumbnail 7" 
+                                 class="thumbnail-image" 
+                                 onclick="selectImage('621.jpg')">
+                            <div class="checkmark-overlay">&#10003;</div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Submit button at the bottom -->
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+
+    <!-- JavaScript to manage selected image display and check mark on thumbnail -->
+    <script>
+        function selectImage(imageName) {
+            // Update the main selected image display
+            const selectedImage = document.getElementById('selected-image');
+            const selectedImageInput = document.getElementById('selected-image-input');
+            selectedImage.src = `images/${imageName}`;
+            selectedImageInput.value = imageName;
+    
+            // Remove the "active" class from all checkmark overlays
+            document.querySelectorAll('.checkmark-overlay').forEach(check => {
+                check.classList.remove('active');
+            });
+    
+            // Remove the "selected" class from all thumbnail images
+            document.querySelectorAll('.thumbnail-image').forEach(img => {
+                img.classList.remove('selected');
+            });
+    
+            // Find the clicked thumbnail and add the "active" class to its checkmark
+            document.querySelectorAll('.thumbnail-image').forEach(img => {
+                // Extract the filename from img.src for exact matching
+                const imgFilename = img.src.split('/').pop();
+                if (imgFilename === imageName) {
+                    img.classList.add('selected'); // Mark the selected thumbnail
+                    img.parentElement.querySelector('.checkmark-overlay').classList.add('active'); // Add checkmark
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>

@@ -309,3 +309,358 @@ body {
         transform: translateY(5px);
     }
 }
+
+
+/* Button Group for Alignment */
+.button-group {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+}
+
+/* LinkedIn Button with Gradient */
+.linkedin-btn {
+    background: linear-gradient(135deg, #0077b5, #005582); /* LinkedIn gradient */
+    color: white; /* High contrast text */
+    border: 2px solid #005582; /* Dark blue border */
+    border-radius: 8px; /* Smooth rounded corners */
+    padding: 0.75rem 2rem; /* Consistent padding */
+    font-size: 1rem; /* Readable text size */
+    font-weight: bold; /* Strong emphasis */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center-align text */
+    display: inline-block; /* Button styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    position: relative; /* For hover effect */
+}
+
+/* LinkedIn Button Hover Effect */
+.linkedin-btn:hover {
+    background: linear-gradient(135deg, #005582, #003b49); /* Darker gradient on hover */
+    border-color: #003b49; /* Matching darker border */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Subtle lift */
+}
+
+/* Footer Content */
+.footer .footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Equal space between sections */
+    align-items: center; /* Center items vertically */
+    text-align: center;
+    gap: 1rem; /* Space between items */
+}
+
+/* Individual Footer Sections */
+.footer-content > * {
+    flex: 1; /* Each section gets equal space */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center; /* Center align all icons horizontally */
+    align-items: center; /* Ensure vertical centering */
+    gap: 1rem; /* Space between icons */
+}
+
+/* Social Links Icon Styling */
+.social-links a {
+    display: flex;
+    justify-content: center; /* Centers SVG horizontally */
+    align-items: center; /* Centers SVG vertically */
+    width: 32px; /* Consistent size for click area */
+    height: 32px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a svg {
+    width: 24px; /* SVG icon size */
+    height: 24px;
+}
+
+.social-links a:hover {
+    opacity: 0.7; /* Subtle fade effect */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Footer Navigation Links */
+.footer-links {
+    display: flex;
+    justify-content: center; /* Align links in the center */
+    gap: 1rem; /* Space between links */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0AD056; /* Highlight on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer .footer-content {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .footer-content > * {
+        flex: none; /* Reset flex for stacked layout */
+    }
+}
+
+.svgfix{
+    color:white;
+}
+
+/* About Section */
+.section.about {
+    background: #f9f9f9; /* Light gray background for contrast */
+    color: #333; /* Dark text for readability */
+    padding: 4rem 2rem; /* Spacing around the section */
+    text-align: center; /* Center-align text by default */
+}
+
+.section.about h2 {
+    font-size: 2.5rem; /* Large, attention-grabbing title */
+    margin-bottom: 2rem; /* Space below the heading */
+    color: #3C3C3C; /* Charcoal color for the title */
+}
+
+.about-content {
+    max-width: 800px; /* Restrict width for better readability */
+    margin: 0 auto; /* Center content horizontally */
+    text-align: left; /* Align text to the left for a professional look */
+    line-height: 1.8; /* Increase line height for easier reading */
+    font-size: 1.1rem; /* Slightly larger font for better readability */
+}
+
+.about-content p {
+    margin-bottom: 1.5rem; /* Add space between paragraphs */
+}
+
+.about-content strong {
+    color: #0AD056; /* Highlight key points with the accent color */
+    font-weight: bold; /* Make them stand out */
+}
+
+/* Optional Animation for About Section */
+.section.about {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Resume Section */
+.section.resume {
+    background: #f9f9f9; /* Subtle background contrast */
+    color: #333; /* Neutral text color */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section.resume h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333; /* Keep the title neutral */
+}
+
+/* Resume Content */
+.resume-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.resume-item {
+    display: flex; /* Align icon and text */
+    align-items: flex-start; /* Ensure text aligns properly with the icon */
+    gap: 1.5rem; /* Add space between icon and text */
+    margin-bottom: 2rem; /* Space between items */
+}
+
+.resume-item .icon {
+    flex-shrink: 0;
+    font-size: 1.8rem; /* Slightly larger icon size for emphasis */
+    color: #0AD056; /* Accent color */
+}
+
+.resume-item p {
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    line-height: 1.6; /* Smooth spacing between lines */
+    margin: 0;
+    color: #333; /* Neutral text color */
+}
+
+.resume-item strong {
+    color: #0AD056; /* Highlight key details */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-item {
+        flex-direction: column; /* Stack icon and text for narrow screens */
+        gap: 0.5rem; /* Reduce spacing */
+        text-align: left;
+    }
+
+    .resume-item .icon {
+        font-size: 1.5rem; /* Adjust icon size for smaller screens */
+    }
+}
+/* Projects Section */
+.section.projects {
+    background: #f9f9f9; /* Light background for contrast */
+    color: #333; /* Neutral text color */
+    padding: 4rem 2rem; /* Padding around the section */
+    text-align: center;
+}
+
+.section.projects h2 {
+    font-size: 2.5rem; /* Larger heading for emphasis */
+    margin-bottom: 2rem; /* Space below the heading */
+    color: #333; /* Keep the title neutral */
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid; /* Use grid layout for projects */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Space between grid items */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Project Card */
+.project {
+    background: white;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Project Header */
+.project-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem; /* Space below the title */
+    color: #0AD056; /* Accent color for project titles */
+}
+
+/* Project Description */
+.project p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666; /* Slightly lighter color for description */
+    margin-bottom: 1.5rem; /* Space below the description */
+}
+
+
+
+.secondary-btn:hover {
+    background: linear-gradient(135deg, #0AD056, #089C45); /* Vibrant green gradient */
+    color: white; /* High contrast text */
+    border: 2px solid #089C45; /* Green border */
+    border-radius: 8px; /* Smooth rounded corners */
+    padding: 0.75rem 2rem; /* Consistent padding */
+    font-size: 1rem; /* Readable text size */
+    font-weight: bold; /* Strong emphasis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    text-align: center; /* Center-align text */
+    position: relative; /* Required for slight translation */
+}
+
+/* Contact Section */
+.section.contact {
+    background: #f9f9f9; /* Subtle background */
+    color: #333; /* Neutral text color */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section.contact h2 {
+    font-size: 2.5rem; /* Large heading */
+    margin-bottom: 1.5rem;
+    color: #333; /* Neutral heading color */
+}
+
+.section.contact p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #666; /* Slightly lighter text for the description */
+}
+
+/* Contact Options */
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Space between email link and form */
+}
+
+/* Email Button */
+.contact-options .btn.primary-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px; /* Limit form width */
+    width: 100%; /* Full width on smaller screens */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between form fields */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc; /* Neutral border */
+    border-radius: 8px; /* Smooth corners */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0AD056; /* Accent color on focus */
+}
+
+.contact-form button {
+    align-self: flex-end; /* Align button to the right */
+    padding: 0.75rem 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-options {
+        gap: 1.5rem;
+    }
+
+    .contact-form button {
+        align-self: center; /* Center button on smaller screens */
+    }
+}

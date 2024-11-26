@@ -1,0 +1,232 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2b2b2b, #d8d8d8);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container styling */
+.container {
+    background: linear-gradient(145deg, #ffffff, #f3f8fe);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 875px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    font-size: 2.6rem;
+    color: #3b3054;
+    background: linear-gradient(45deg, #0066ff, #12a8ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Form Styles */
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #3a3a3a;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+/* General styling for all input fields */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Focus effect for all input fields */
+input[type="text"]:focus,
+select:focus {
+    border-color: #0066ff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 111, 145, 0.3);
+}
+
+/* General styling for all input fields */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Focus effect for all input fields */
+input[type="number"]:focus,
+select:focus {
+    border-color: #0066ff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 111, 145, 0.3);
+}
+
+
+/* Styling for the city dropdown (feature2) only */
+#feature2 {
+    appearance: none;
+    background-color: #ffffff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23333333" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Predict Price Button */
+button {
+    background: linear-gradient(90deg, #0066ff, #12a8ff);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 30px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 132, 255, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 132, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Image Selection Layout */
+.image-selection-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+/* Selected Image Display */
+.selected-image-wrapper {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.selected-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Thumbnail Images Below the Main Display */
+.thumbnail-selection {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.thumbnail-wrapper {
+    position: relative;
+}
+
+.thumbnail-image {
+    width: 65px;
+    height: 65px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Green Checkmark on Selected Thumbnail */
+.checkmark-overlay {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.checkmark-overlay.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#disclaimer {
+    color: red;
+    font-size: 1em;
+}
+
+#github:active{
+    color: red;
+}#github:hover{
+    color: red;
+}#github:visited{
+    color: red;
+}#github{
+    color: red;
+}
