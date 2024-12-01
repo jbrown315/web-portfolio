@@ -866,3 +866,88 @@ body {
         display: flex;
     }
 }
+
+/* General Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Prevent wrapping */
+    width: max-content; /* Allow buttons to size dynamically */
+}
+
+/* Primary Button */
+.primary-btn {
+    background: #0AD056;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #089C45;
+}
+
+/* Responsive Adjustments for Buttons */
+@media (max-width: 480px) {
+    .btn {
+        margin: 0.25rem 0;
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+        gap: 1rem; /* Space between buttons */
+    }
+}
+
+/* Default layout for larger screens */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: row; /* Default row layout with image on the right */
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center-align text */
+        gap: 0; /* Add spacing between elements */
+    }
+
+    .hero-image {
+        order: -1; /* Move the image to the top */
+    }
+
+    .hero-image img {
+        width: 200px; /* Adjust image size for smaller screens */
+        height: 200px;
+        border-radius: 50%; /* Keep the rounded appearance */
+        object-fit: cover;
+        border: 5px solid white;
+    }
+
+    .hero-text {
+        margin-top: 1rem; /* Add spacing below the image */
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Adjust heading size for readability */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+}
+
+#smile {
+    font-size: 4em;
+}
