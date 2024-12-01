@@ -947,3 +947,7 @@ body {
         font-size: 1rem; /* Adjust paragraph font size */
     }
 }
+
+#smile {
+    font-size: 4em;
+}
