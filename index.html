@@ -31,6 +31,11 @@
     </header>
     <nav class="navbar">
         <div class="container">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#resume">Resume</a></li>
@@ -135,7 +140,7 @@
                     <!-- Email Link -->
                     <a href="mailto:Josh.Brown.3155@gmail.com" class="btn primary-btn">Email Me</a>
                     <!-- Optional Contact Form -->
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                    <form action="https://getform.io/f/byvvqgna" method="POST" class="contact-form">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="_replyto" placeholder="Your Email" required>
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -181,11 +186,27 @@
         </div>
     </footer>
     
-    
     <script>
         document.querySelector('.scroll-indicator').addEventListener('click', () => {
             document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
         });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinkItems = document.querySelectorAll('.nav-links a');
+
+        // Toggle the menu on hamburger click
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close the menu when a link is clicked
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
     </script>
 </body>
 </html>
