@@ -920,7 +920,7 @@ body {
     .hero-content {
         flex-direction: column; /* Stack items vertically */
         text-align: center; /* Center-align text */
-        gap: 1rem; /* Add spacing between elements */
+        gap: 0; /* Add spacing between elements */
     }
 
     .hero-image {
